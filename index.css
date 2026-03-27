@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+      background: linear-gradient(to right, black, yellow);
+     background: linear-gradient(270deg, #000000, #ffcc00, #000000);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    /* position: relative; */
+     padding-bottom: 100px; 
+}
+
+/* Animation */
+@keyframes gradientFlow {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+
+section{
+        
+    /* background-color: brown; */
+    width: 100%;
+    /* height:100vh; */
+    display: flex;
+        min-height: 100vh;   /* ✅ better than height */
+
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(to right, black, yellow);
+     background: linear-gradient(270deg, #000000, #ffcc00, #000000);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite; */
+}
+
+/* Animation */
+
+.papu{
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly;  🔥 THIS IS KEY */
+    
+    width: 100%;
+    flex-wrap: wrap;
+    /* height: 40vh; */
+    /* gap: auto; */
+    gap: 20px;
+     
+}
+.card1{
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    /* background-color:rgb(173, 22, 210); */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* flex-wrap: wrap; */
+        /* width: 100px; */
+    /* height: 70%; */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex-direction: column;
+     width: 200px;
+    max-width: 90%;   /* 🔥 prevents squeezing */
+
+     background: #f5f5f5;   /* 🔥 makes card visible */
+    padding: 20px;
+
+    /* animation */
+    
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: dropIn 0.6s ease forwards;
+}
+
+@keyframes dropIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* animation for card */
+.card1:nth-child(1){
+    animation-delay:0.50s;
+}
+
+.card1:nth-child(2){
+    animation-delay: 0.80s;
+}
+
+.card1:nth-child(3){
+    animation-delay: 1.5s;
+}
+.card1 img{
+    width: 100px;
+    overflow: hidden;
+}
+button{
+    width: 200px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(252, 251, 251);
+    background-color:#0800fb;
+    margin-top: 15px;
+    height: 38px;
+    border-radius: 20px;
+    padding: 10px 20px;
+
+}
+
+@media (max-width: 768px){
+
+    .papu{
+        flex-direction: column;   /* vertical */
+        flex-wrap: nowrap;        /* 🔥 IMPORTANT FIX */
+        align-items: center;
+    }
+
+    .card1{
+        width: 90%;
+        max-width: 200px;
+        gap: 0px;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
+
+.card1{
+    transition: 0.3s;
+}
+
+.card1:hover{
+    transform: translateY(-5px);
+}
+
+/* 🔹 Desktop (ADD HERE 👇) */
+@media (min-width: 850px){
+    .papu{
+        justify-content: space-evenly;  /* 🔥 desktop spacing */
+        gap: 0;
+    }
+}
+
+
+
+.footer{
+    position: fixed;   /* 🔥 KEY */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    padding: 15px 10px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+}
+
+.social-icons{
+    margin-top: 10px;
+}
+
+.social-icons a{
+    color: white;
+    font-size: 22px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+/* 🔥 Hover effects */
+.social-icons a:hover{
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    position: sticky;
+    top: 0;
+        position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    
+
+}
